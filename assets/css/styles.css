@@ -1,0 +1,376 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h2-font-size: 3rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: rgb(22, 22, 22);
+  transition: .5s;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+}
+
+.section__description {
+  line-height: 2;
+  width: 500px;
+}
+
+.red {
+  color: rgb(255, 16, 16);
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 0;
+    width: 90%;
+    top: -100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: .4s;
+    border-radius: 2rem;
+    z-index: var(--z-fixed);
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.nav__link, .nav__logo, .nav__toggle {
+  color: rgb(22, 22, 22);
+  font-weight: 600;
+}
+
+.nav__toggle {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: calc(var(--header-height) + 1rem);
+}
+
+
+/*=============== HOME ===============*/
+.home__container {
+  row-gap: 3rem;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.home__description {
+  margin-bottom: 2rem;
+}
+
+ img {
+  width: 500px;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background-color: rgb(255, 16, 16);
+  color: #fff;
+  padding: .75rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: rgb(168, 11, 11);
+}
+
+/*=============== BEST ===============*/
+.best {
+  background-color: rgb(255, 16, 16);
+  color: #fff;
+}
+
+.best__card {
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 300px;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgb(226, 226, 226);
+}
+
+.best__icon {
+  border: 1px solid rgb(255, 149, 18);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.best__data {
+  color: rgb(22, 22, 22);
+}
+
+/*=============== ABOUT ===============*/
+.about__card {
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgb(226, 226, 226);
+  border-radius: 1rem;
+}
+
+.about__container img {
+  border-radius: 0 10rem 0 0;
+}
+
+
+
+/*=============== MENU ===============*/
+.center {
+  text-align: center;
+}
+
+.stars {
+  text-align: center;
+}
+
+.stars i {
+  color: rgb(223, 215, 0);
+  font-size: 1.25rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/*=============== CLIENTS ===============*/
+.clients__container img {
+  border-radius: 10rem 0 0 0;
+}
+
+.clients__description {
+  font-style: italic;
+  font-size: 1.25rem;
+
+}
+
+/*=============== CONTACT ===============*/
+.contact__container {
+  padding-bottom: 3rem;
+}
+
+.contact__description {
+  text-align: center;
+}
+
+.contact__content {
+  row-gap: .75rem;
+}
+
+.contact__address {
+  font-size: var(--small-font-size);
+  font-weight: 600;
+}
+
+.contact__information {
+  font-weight: initial;
+}
+
+/*=============== FOOTER ===============*/
+.footer__info {
+  text-align: center;
+  padding: 2rem 0;
+  }
+  
+  .footer__privacy {
+    padding-top: 1rem;
+  }
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+  
+  .section {
+    padding: 3.5rem 0 1rem;
+  }
+
+ 
+}
+
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+
+  .section {
+    padding: 6rem 0 2rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+  
+  .home__container {
+    padding: 6rem 0 2rem;
+  }
+  
+  .best__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* For large devices */
+
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .home {
+    padding-top: 4rem;
+  }
+
+  .home__img {
+    width: 540px;
+  }
+
+  .home__description {
+    padding-right: 5rem;
+  }
+
+  .home__container,
+  .about__container,
+  .clients__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .best__cards,
+  .about__cards,
+  .contact__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+}
